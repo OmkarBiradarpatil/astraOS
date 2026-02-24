@@ -1,9 +1,6 @@
 import React from "react";
-import { useAuth } from "../context/AuthContext";
-import { useAppContext } from "../context/AppContext";
 
 const Topbar = () => {
-  const { user } = useAuth();
   const d = new Date();
 
   return (

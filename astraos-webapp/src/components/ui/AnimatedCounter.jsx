@@ -41,6 +41,7 @@ const AnimatedCounter = ({
     rAF = requestAnimationFrame(updateCounter);
 
     return () => cancelAnimationFrame(rAF);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value, duration]);
 
   const formattedValue =
