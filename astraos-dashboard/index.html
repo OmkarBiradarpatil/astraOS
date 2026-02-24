@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>AstraOS — Personal Operating System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="light-grade"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="logo">
+        <div class="logo-icon">Ao</div>
+        <div class="logo-name">Astra<span>OS</span></div>
+      </div>
+      <nav class="nav">
+        <div class="nav-section">Main</div>
+        <a class="nav-item active" href="#">
+          <svg
+            class="nav-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="3" y="3" width="7" height="7" />
+            <rect x="14" y="3" width="7" height="7" />
+            <rect x="14" y="14" width="7" height="7" />
+            <rect x="3" y="14" width="7" height="7" />
+          </svg>
+          <span>Dashboard</span>
+        </a>
+        <a class="nav-item" href="#">
+          <svg
+            class="nav-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="9 11 12 14 22 4" />
+            <path
+              d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
+            />
+          </svg>
+          <span>Tasks</span>
+          <span class="nav-badge">8</span>
+        </a>
+        <a class="nav-item" href="#">
+          <svg
+            class="nav-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+          </svg>
+          <span>Study</span>
+        </a>
+        <a class="nav-item" href="#">
+          <svg
+            class="nav-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polygon points="23 7 16 12 23 17 23 7" />
+            <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+          </svg>
+          <span>FocusTube</span>
+        </a>
+        <div class="nav-section">Personal</div>
+        <a class="nav-item" href="#">
+          <svg
+            class="nav-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+            />
+          </svg>
+          <span>Vault</span>
+        </a>
+        <a class="nav-item" href="#">
+          <svg
+            class="nav-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+            />
+          </svg>
+          <span>Health</span>
+        </a>
+        <a class="nav-item" href="#">
+          <svg
+            class="nav-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polygon points="5 3 19 12 5 21 5 3" />
+          </svg>
+          <span>Entertainment</span>
+        </a>
+        <a class="nav-item" href="#">
+          <svg
+            class="nav-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="3" />
+            <path d="M19.07 4.93l-1.41 1.41" />
+            <path d="M4.93 19.07l1.41-1.41" />
+            <path d="M19.07 19.07l-1.41-1.41" />
+            <path d="M4.93 4.93l1.41 1.41" />
+            <line x1="12" y1="2" x2="12" y2="4" />
+            <line x1="12" y1="20" x2="12" y2="22" />
+            <line x1="2" y1="12" x2="4" y2="12" />
+            <line x1="20" y1="12" x2="22" y2="12" />
+          </svg>
+          <span>Settings</span>
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-card">
+          <div class="avatar">A</div>
+          <div class="user-info">
+            <div class="user-name">Arjun Mehta</div>
+            <div class="user-role">student@astraos</div>
+          </div>
+          <div class="user-status"></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="topbar-title">Dashboard</div>
+        <div class="topbar-subtitle">alpha / v2.4</div>
+        <div class="topbar-search">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#6B7A99"
+            stroke-width="2"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+          <input type="text" placeholder="Search anything..." />
+          <div class="search-hint">⌘K</div>
+        </div>
+        <div class="topbar-actions">
+          <div class="date-chip" id="dateChip">Tue, Feb 24</div>
+          <div class="icon-btn">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+              <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+            </svg>
+            <div class="notif-dot"></div>
+          </div>
+          <div class="icon-btn">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+            </svg>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT -->
+      <div class="content">
+        <!-- Header -->
+        <div class="content-header">
+          <div>
+            <div class="page-headline">Good evening, <em>Arjun.</em></div>
+            <div class="page-subline">
+              You're on a 7-day streak — keep it up.
+            </div>
+          </div>
+          <div class="quick-stats">
+            <div class="qstat">
+              <div
+                class="qstat-dot"
+                style="background: #10b981; box-shadow: 0 0 6px #10b981"
+              ></div>
+              <div class="qstat-val" style="color: #10b981">7</div>
+              <div style="color: #6b7a99; font-size: 11px">day streak</div>
+            </div>
+            <div class="qstat">
+              <div
+                class="qstat-dot"
+                style="background: #06b6d4; box-shadow: 0 0 6px #06b6d4"
+              ></div>
+              <div class="qstat-val">
+                94<span style="font-size: 10px; color: #6b7a99">pts</span>
+              </div>
+              <div style="color: #6b7a99; font-size: 11px">today</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GRID -->
+        <div class="grid">
+          <!-- 1. FOCUS CARD (span 2) -->
+          <div class="card card-span2">
+            <div class="card-header">
+              <div>
+                <div class="card-label">Focus Overview</div>
+                <div class="card-title">Today's Performance</div>
+              </div>
+              <div
+                class="card-icon"
+                style="
+                  background: rgba(6, 182, 212, 0.1);
+                  border: 1px solid rgba(6, 182, 212, 0.2);
+                  color: var(--accent);
+                "
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </div>
+            </div>
+            <div class="focus-metrics">
+              <div class="focus-metric">
+                <div class="focus-metric-val" data-count="6.4">6.4</div>
+                <div class="focus-metric-label">study hrs</div>
+              </div>
+              <div class="focus-metric">
+                <div class="focus-metric-val" data-count="12">12</div>
+                <div class="focus-metric-label">pomodoros</div>
+              </div>
+              <div class="focus-metric">
+                <div class="focus-metric-val" data-count="87">87</div>
+                <div class="focus-metric-label">focus score</div>
+              </div>
+            </div>
+            <div class="progress-label">
+              <span
+                style="
+                  color: var(--muted);
+                  font-size: 11.5px;
+                  font-family: &quot;Fira Code&quot;, monospace;
+                "
+                >Daily Goal Progress</span
+              >
+              <span>74%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" style="width: 74%"></div>
+            </div>
+          </div>
+
+          <!-- 2. TASK CARD -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-label">Pending Tasks</div>
+                <div class="card-title">Task Snapshot</div>
+              </div>
+              <div
+                class="card-icon"
+                style="
+                  background: rgba(139, 92, 246, 0.1);
+                  border: 1px solid rgba(139, 92, 246, 0.2);
+                  color: #8b5cf6;
+                "
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 11 12 14 22 4" />
+                  <path
+                    d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="task-list">
+              <div class="task-item" onclick="toggleTask(this)">
+                <div class="task-check">
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="3"
+                    class="check-icon"
+                    style="display: none"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <div
+                  class="priority-dot"
+                  style="background: #f43f5e; box-shadow: 0 0 6px #f43f5e"
+                ></div>
+                <span class="task-text">Linear algebra chapter 6</span>
+                <span class="task-tag">math</span>
+              </div>
+              <div class="task-item" onclick="toggleTask(this)">
+                <div class="task-check">
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="3"
+                    class="check-icon"
+                    style="display: none"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <div
+                  class="priority-dot"
+                  style="background: #f59e0b; box-shadow: 0 0 6px #f59e0b"
+                ></div>
+                <span class="task-text">Review OS lecture notes</span>
+                <span class="task-tag">cs</span>
+              </div>
+              <div class="task-item done" onclick="toggleTask(this)">
+                <div
+                  class="task-check"
+                  style="background: var(--accent); border-color: var(--accent)"
+                >
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="3"
+                    class="check-icon"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <div class="priority-dot" style="background: #6b7a99"></div>
+                <span class="task-text">Push assignment to GitHub</span>
+                <span class="task-tag">dev</span>
+              </div>
+              <div class="task-item" onclick="toggleTask(this)">
+                <div class="task-check">
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="3"
+                    class="check-icon"
+                    style="display: none"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <div
+                  class="priority-dot"
+                  style="background: #06b6d4; box-shadow: 0 0 6px #06b6d4"
+                ></div>
+                <span class="task-text">Read 20 pages of Deep Work</span>
+                <span class="task-tag">read</span>
+              </div>
+              <div class="task-item" onclick="toggleTask(this)">
+                <div class="task-check">
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="3"
+                    class="check-icon"
+                    style="display: none"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <div
+                  class="priority-dot"
+                  style="background: #10b981; box-shadow: 0 0 6px #10b981"
+                ></div>
+                <span class="task-text">30 min evening walk</span>
+                <span class="task-tag">health</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. STUDY CARD -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-label">Study Tracker</div>
+                <div class="card-title">Weekly Summary</div>
+              </div>
+              <div
+                class="card-icon"
+                style="
+                  background: rgba(16, 185, 129, 0.1);
+                  border: 1px solid rgba(16, 185, 129, 0.2);
+                  color: #10b981;
+                "
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+              </div>
+            </div>
+            <div class="study-top">
+              <div class="study-hours">32.4</div>
+              <div class="study-unit">hrs this week</div>
+              <div class="study-trend">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <polyline points="18 15 12 9 6 15" />
+                </svg>
+                +12%
+              </div>
+            </div>
+            <div class="bar-chart">
+              <div class="bar-day">
+                <div class="bar" style="height: 45px"></div>
+                <div class="bar-label">M</div>
+              </div>
+              <div class="bar-day">
+                <div class="bar active" style="height: 52px"></div>
+                <div class="bar-label">T</div>
+              </div>
+              <div class="bar-day">
+                <div class="bar" style="height: 38px"></div>
+                <div class="bar-label">W</div>
+              </div>
+              <div class="bar-day">
+                <div class="bar active" style="height: 56px"></div>
+                <div class="bar-label">T</div>
+              </div>
+              <div class="bar-day">
+                <div class="bar" style="height: 32px"></div>
+                <div class="bar-label">F</div>
+              </div>
+              <div class="bar-day">
+                <div class="bar active" style="height: 48px"></div>
+                <div class="bar-label">S</div>
+              </div>
+              <div class="bar-day">
+                <div class="bar" style="height: 20px"></div>
+                <div class="bar-label">S</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. HEALTH CARD -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-label">Wellness</div>
+                <div class="card-title">Health Snapshot</div>
+              </div>
+              <div
+                class="card-icon"
+                style="
+                  background: rgba(244, 63, 94, 0.1);
+                  border: 1px solid rgba(244, 63, 94, 0.2);
+                  color: #f43f5e;
+                "
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="health-grid">
+              <div class="health-item">
+                <div class="health-item-icon">🌙</div>
+                <div class="health-item-val" style="color: #8b5cf6">
+                  7.2<span style="font-size: 12px; color: var(--muted)">h</span>
+                </div>
+                <div class="health-item-label">sleep last night</div>
+              </div>
+              <div class="health-item">
+                <div class="health-item-icon">💧</div>
+                <div class="health-item-val" style="color: #06b6d4">
+                  1.8<span style="font-size: 12px; color: var(--muted)">L</span>
+                </div>
+                <div class="health-item-label">water intake</div>
+              </div>
+              <div class="energy-circle">
+                <div class="circle-wrap">
+                  <svg width="56" height="56" viewBox="0 0 56 56">
+                    <circle
+                      class="circle-track"
+                      cx="28"
+                      cy="28"
+                      r="24"
+                      stroke-width="4"
+                    />
+                    <circle
+                      class="circle-fill"
+                      cx="28"
+                      cy="28"
+                      r="24"
+                      stroke-width="4"
+                      stroke="#F59E0B"
+                      stroke-dasharray="150.8"
+                      stroke-dashoffset="38"
+                      id="energyCircle"
+                    />
+                  </svg>
+                  <div class="circle-text">75%</div>
+                </div>
+                <div class="energy-info">
+                  <div class="energy-label">Energy Score</div>
+                  <div class="energy-val" style="color: var(--gold)">High</div>
+                  <div class="energy-segments">
+                    <div class="seg on"></div>
+                    <div class="seg on"></div>
+                    <div class="seg on"></div>
+                    <div class="seg"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. VAULT CARD -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-label">Personal Vault</div>
+                <div class="card-title">Quick Access</div>
+              </div>
+              <div
+                class="card-icon"
+                style="
+                  background: rgba(245, 158, 11, 0.1);
+                  border: 1px solid rgba(245, 158, 11, 0.2);
+                  color: #f59e0b;
+                "
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+              </div>
+            </div>
+            <div class="vault-list">
+              <div class="vault-item">
+                <div
+                  class="vault-icon"
+                  style="background: rgba(239, 68, 68, 0.12)"
+                >
+                  📄
+                </div>
+                <div>
+                  <div class="vault-name">Semester Timetable.pdf</div>
+                  <div class="vault-date">Modified 2h ago</div>
+                </div>
+                <div class="vault-size">1.2 MB</div>
+              </div>
+              <div class="vault-item">
+                <div
+                  class="vault-icon"
+                  style="background: rgba(16, 185, 129, 0.12)"
+                >
+                  📊
+                </div>
+                <div>
+                  <div class="vault-name">Study Plan Q1.xlsx</div>
+                  <div class="vault-date">Modified yesterday</div>
+                </div>
+                <div class="vault-size">420 KB</div>
+              </div>
+              <div class="vault-item">
+                <div
+                  class="vault-icon"
+                  style="background: rgba(139, 92, 246, 0.12)"
+                >
+                  📝
+                </div>
+                <div>
+                  <div class="vault-name">Algorithms Notes.md</div>
+                  <div class="vault-date">Modified 3d ago</div>
+                </div>
+                <div class="vault-size">88 KB</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. ENTERTAINMENT CARD -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-label">Entertainment</div>
+                <div class="card-title">Watch Activity</div>
+              </div>
+              <div
+                class="card-icon"
+                style="
+                  background: rgba(251, 146, 60, 0.1);
+                  border: 1px solid rgba(251, 146, 60, 0.2);
+                  color: #fb923c;
+                "
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polygon points="23 7 16 12 23 17 23 7" />
+                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                </svg>
+              </div>
+            </div>
+            <div class="ent-hero">
+              <div>
+                <div class="ent-hours">
+                  4.2<span
+                    style="
+                      font-size: 16px;
+                      color: var(--muted);
+                      font-family: &quot;Fira Code&quot;, monospace;
+                    "
+                  >
+                    hrs</span
+                  >
+                </div>
+                <div
+                  style="
+                    color: var(--muted);
+                    font-size: 11.5px;
+                    margin-top: 2px;
+                    font-family: &quot;Fira Code&quot;, monospace;
+                  "
+                >
+                  this week
+                </div>
+              </div>
+              <div class="binge-badge">
+                <div class="binge-pulse"></div>
+                Binge Alert
+              </div>
+            </div>
+            <div class="ent-shows">
+              <div class="ent-show">
+                <div class="show-thumb">🎬</div>
+                <div class="show-name">Dark (Netflix)</div>
+                <div class="show-bar">
+                  <div class="show-bar-fill" style="width: 80%"></div>
+                </div>
+                <div class="show-dur">2.1h</div>
+              </div>
+              <div class="ent-show">
+                <div class="show-thumb">🎭</div>
+                <div class="show-name">Severance</div>
+                <div class="show-bar">
+                  <div class="show-bar-fill" style="width: 50%"></div>
+                </div>
+                <div class="show-dur">1.3h</div>
+              </div>
+              <div class="ent-show">
+                <div class="show-thumb">🎥</div>
+                <div class="show-name">YouTube Mix</div>
+                <div class="show-bar">
+                  <div class="show-bar-fill" style="width: 30%"></div>
+                </div>
+                <div class="show-dur">0.8h</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
