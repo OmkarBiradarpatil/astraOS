@@ -16,7 +16,8 @@ def _get_llm(stream: bool = False):
         return ChatOpenAI(
             model=settings.llm_model,
             openai_api_key=settings.openai_api_key,
-            temperature=0.4,
+            temperature=0.3,
+            max_tokens=600,
             streaming=stream,
         )
     return None
@@ -72,7 +73,7 @@ async def chat_with_documents(
 ) -> dict:
     """Non-streaming RAG answer for a question."""
     # Retrieve relevant context
-    chunks = await semantic_search(query, document_ids, top_k=6)
+    chunks = await semantic_search(query, document_ids, top_k=4)
 
     if not chunks:
         return {
@@ -81,8 +82,8 @@ async def chat_with_documents(
         }
 
     context = "\n\n---\n\n".join([
-        f"[Source: {c['document_name']}]\n{c['content']}"
-        for c in chunks[:5]
+        f"[{c['document_name']}]\n{c['content'][:400]}"
+        for c in chunks[:3]
     ])
 
     llm = _get_llm()
@@ -95,10 +96,7 @@ async def chat_with_documents(
     # Build conversation history
     from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
     messages = [
-        SystemMessage(content="""You are AstraOS AI — an intelligent knowledge assistant. 
-You help users understand their documents and connect ideas across their knowledge vault.
-Answer questions based on the provided context. Be clear, insightful, and cite your sources.
-If the context doesn't fully answer the question, say so honestly.""")
+        SystemMessage(content="You are AstraOS AI, a knowledge assistant. Answer concisely from the provided vault context. Cite document names when relevant.")
     ]
 
     if conversation_history:
@@ -108,18 +106,15 @@ If the context doesn't fully answer the question, say so honestly.""")
             elif msg["role"] == "assistant":
                 messages.append(AIMessage(content=msg["content"]))
 
-    messages.append(HumanMessage(content=f"""Context from your knowledge vault:
-
+    messages.append(HumanMessage(content=f"""Vault context:
 {context}
 
-Question: {query}
-
-Provide a comprehensive, accurate answer based on the context above."""))
+Q: {query}"""))
 
     response = await llm.ainvoke(messages)
     return {
         "answer": response.content,
-        "sources": chunks[:5],
+        "sources": chunks[:3],
     }
 
 
@@ -129,12 +124,12 @@ async def stream_chat_with_documents(
     conversation_history: Optional[List[dict]] = None,
 ) -> AsyncGenerator[str, None]:
     """Streaming RAG answer — yields text chunks."""
-    chunks = await semantic_search(query, document_ids, top_k=6)
+    chunks = await semantic_search(query, document_ids, top_k=4)
 
     context = "\n\n---\n\n".join([
-        f"[Source: {c['document_name']}]\n{c['content']}"
-        for c in chunks[:5]
-    ]) if chunks else "No specific documents found — answering from general knowledge."
+        f"[{c['document_name']}]\n{c['content'][:400]}"
+        for c in chunks[:3]
+    ]) if chunks else "No specific documents found."
 
     llm = _get_llm(stream=True)
     if not llm:
@@ -144,7 +139,7 @@ async def stream_chat_with_documents(
 
     from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
     messages = [
-        SystemMessage(content="You are AstraOS AI — an intelligent knowledge assistant. Answer based on the provided context from the user's vault. Be clear, insightful, and cite sources."),
+        SystemMessage(content="You are AstraOS AI. Answer concisely from the vault context. Cite document names when relevant."),
     ]
 
     if conversation_history:
@@ -158,7 +153,7 @@ async def stream_chat_with_documents(
 
     # Stream sources first
     import json
-    yield f"data: {json.dumps({'type': 'sources', 'sources': chunks[:5]})}\n\n"
+    yield f"data: {json.dumps({'type': 'sources', 'sources': chunks[:3]})}\n\n"
 
     async for chunk in llm.astream(messages):
         if chunk.content:
